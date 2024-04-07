@@ -70,8 +70,8 @@ export const BillboardForm = ({ initialData }: BillboardFormProps) => {
       } else {
         await axios.post(`/api/${params.storeId}/billboards`, data);
       }
-      router.refresh();
       router.push(`/${params.storeId}/billboards`);
+      router.refresh();
       toast.success(toastMessage);
     } catch (error: any) {
       toast.error("Something went wrong.");
