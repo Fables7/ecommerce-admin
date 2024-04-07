@@ -44,7 +44,6 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({ initialData }) => {
   const origin = useOrigin();
   const { onOpen, onClose } = useModal();
 
-  const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const form = useForm<SettingsFormValues>({
@@ -77,7 +76,7 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({ initialData }) => {
       toast.error("Make sure you removed all products and categories first.");
     } finally {
       setLoading(false);
-      setOpen(false);
+      onClose();
     }
   };
 
