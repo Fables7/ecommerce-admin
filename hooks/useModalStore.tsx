@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-export type ModalType = "createStore";
+export type ModalType = "createStore" | "alert";
 
 interface ModalStore {
   isOpen: boolean;

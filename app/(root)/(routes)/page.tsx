@@ -5,13 +5,13 @@ import { UserButton } from "@clerk/nextjs";
 import { useEffect } from "react";
 
 const SetupPage = () => {
-  const { onOpen, isOpen } = useModal();
+  const { onOpen, isOpen, onClose } = useModal();
 
   useEffect(() => {
     if (!isOpen) {
       onOpen("createStore");
     }
-  }, [isOpen, onOpen]);
+  }, [isOpen, onClose, onOpen]);
 
   return null;
 };
